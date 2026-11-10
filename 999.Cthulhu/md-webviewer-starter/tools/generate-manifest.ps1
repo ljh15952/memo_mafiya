@@ -41,7 +41,7 @@ $groups = Get-ChildItem -LiteralPath $Root -Directory |
   ForEach-Object {
     $dir = $_
     $files = Get-ChildItem -LiteralPath $dir.FullName -Filter *.md -File |
-      Sort-Object @{ Expression = { Get-NaturalPrefixNumber $_.Name } }, Name |
+      Sort-Object @{ Expression = { Get-NaturalPrefixNumber $_.Name } }, @{ Expression = { $_.BaseName -match '\(\uD574\uC124\)$' } }, Name |
       ForEach-Object {
         $relative = $_.FullName.Substring($RepoRootPath.Length + 1).Replace('\', '/')
         [ordered]@{
