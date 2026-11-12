@@ -76,3 +76,6 @@ DerivedDataCache/*
 
 # 원문·작업용 임시 파일
 _src/
+
+# 저작권이 있는 읽기용 원문 (커밋 금지)
+998.L.Novel/
